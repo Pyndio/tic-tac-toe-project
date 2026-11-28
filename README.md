@@ -15,8 +15,8 @@ Dois jogadores (X e O) alternam jogadas num tabuleiro 3x3; o jogo identifica vit
 Requisitos: Node.js 18+ e npm.
 
 ```bash
-git clone URL_DO_REPOSITORIO
-cd coding-tictactoe
+git clone https://github.com/Pyndio/tic-tac-toe-project.git
+cd tic-tac-toe-project
 npm install
 npm start
 ```
@@ -27,6 +27,7 @@ O jogo abre em http://localhost:3000. Testes automatizados: `npm test`.
 2. Clique numa casa vazia para jogar. Casas ocupadas não podem ser sobrescritas.
 3. Vence quem completar uma linha, coluna ou diagonal. Se as 9 casas forem preenchidas sem vencedor, é empate.
 4. Após o fim da partida não há novas jogadas. Use **Reiniciar jogo** para recomeçar.
+5. Quando alguém vence, as 3 casas da sequência vencedora ficam iluminadas e aparece uma tela de vencedor com os botões **Jogar novamente** e **Ver tabuleiro** (para fechar a tela e ver as casas iluminadas).
 
 ## Estrutura do projeto
 ```
@@ -44,11 +45,8 @@ src/
 ## Equipe
 | Integrante | Papel | Contribuições |
 |------------|-------|---------------|
-| (nome) | Scrum Master | (ex.: organizou tarefas/Issues, revisou README) |
-| (nome) | Desenvolvedor | (ex.: componentes Square e Board) |
-| (nome) | Desenvolvedor | (ex.: componente Game e calculateWinner) |
-| (nome) | Testador | (ex.: testes T01–T05) |
-| (nome) | Testador | (ex.: testes T06–T09) |
+| Pedro Pereira (01927476) | Scrum Master, Desenvolvedor 1, Testador 1 | Estrutura inicial do projeto (componentes, lógica, testes), README base, organização das tarefas e revisão de Pull Requests |
+| Virginia Ratis (01927477) | Desenvolvedora 2, Testadora 2 | Destaque das casas vencedoras e tela de vencedor |
 
 ## Processo Git
 - `main`: versão estável.

@@ -1,8 +1,11 @@
 import "./Square.css";
 
-function Square({ value, onSquareClick }) {
+// isWinning: true quando a casa faz parte da linha vencedora
+function Square({ value, onSquareClick, isWinning }) {
+  const className = isWinning ? "square square--winning" : "square";
+
   return (
-    <button className="square" onClick={onSquareClick}>
+    <button className={className} onClick={onSquareClick}>
       {value}
     </button>
   );

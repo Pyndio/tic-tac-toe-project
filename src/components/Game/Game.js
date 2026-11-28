@@ -1,20 +1,27 @@
 import { useState } from "react";
 import Board from "../Board/Board";
+import WinnerModal from "../WinnerModal/WinnerModal";
 import { calculateWinner } from "../../utils/calculateWinner";
 import "./Game.css";
 
 function Game() {
   const [squares, setSquares] = useState(Array(9).fill(null));
   const [xIsNext, setXIsNext] = useState(true);
+  // true quando o jogador fechou o overlay para ver o tabuleiro
+  const [modalClosed, setModalClosed] = useState(false);
 
-  const winner = calculateWinner(squares);
+  // calculateWinner retorna { winner, line } ou null
+  const result = calculateWinner(squares);
+  const winner = result ? result.winner : null;
+  const winningLine = result ? result.line : [];
   const isDraw = !winner && squares.every((s) => s !== null);
 
-  function handleClick(i) {
-    // Ignora clique se a posição está ocupada ou se o jogo já acabou.
-    if (squares[i] || winner) return;
+  // O overlay só aparece com vitória ou empate, e se não foi fechado
+  const showModal = (winner || isDraw) && !modalClosed;
 
-    const next = squares.slice(); // cópia (não muta o estado)
+  function handleClick(i) {
+    if (squares[i] || winner) return;
+    const next = squares.slice();
     next[i] = xIsNext ? "X" : "O";
     setSquares(next);
     setXIsNext(!xIsNext);
@@ -23,6 +30,7 @@ function Game() {
   function handleRestart() {
     setSquares(Array(9).fill(null));
     setXIsNext(true);
+    setModalClosed(false);
   }
 
   let status;
@@ -33,10 +41,18 @@ function Game() {
   return (
     <section className="game">
       <p className="status" role="status">{status}</p>
-      <Board squares={squares} onSquareClick={handleClick} />
+      <Board squares={squares} onSquareClick={handleClick} winningLine={winningLine} />
       <button className="restart" onClick={handleRestart}>
         Reiniciar jogo
       </button>
+
+      {showModal && (
+        <WinnerModal
+          winner={winner}
+          onRestart={handleRestart}
+          onClose={() => setModalClosed(true)}
+        />
+      )}
     </section>
   );
 }
