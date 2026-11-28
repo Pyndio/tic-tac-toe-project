@@ -57,11 +57,11 @@ src/
 ## Testes
 | Teste | Resultado | Observações |
 |-------|-----------|-------------|
-| T01 Abrir o jogo | (passou/falhou) | |
-| T02 Realizar uma jogada | | |
-| T03 Jogadas alternadas | | |
-| T04 Posição ocupada | | |
-| T05 Sequência vencedora | | |
+| T01 Abrir o jogo | passou | flui normalmente |
+| T02 Realizar uma jogada | passou | tudo ok ele corresponde ao x e a o normalmente |
+| T03 Jogadas alternadas | passou | funciona bem |
+| T04 Posição ocupada | passou | ele não entra na mesma casa que a outra  |
+| T05 Sequência vencedora | passou | quando ganha aparece o ganhador e da pra ver o tabuleiro ou reiniciar o jogo |
 | T06 Continuar após vitória | | |
 | T07 Reiniciar o jogo | | |
 | T08 Empate | | |
