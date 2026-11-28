@@ -62,10 +62,10 @@ src/
 | T03 Jogadas alternadas | passou | funciona bem |
 | T04 Posição ocupada | passou | ele não entra na mesma casa que a outra  |
 | T05 Sequência vencedora | passou | quando ganha aparece o ganhador e da pra ver o tabuleiro ou reiniciar o jogo |
-| T06 Continuar após vitória | | |
-| T07 Reiniciar o jogo | | |
-| T08 Empate | | |
-| T09 Atualizar a página | | |
+| T06 Continuar após vitória | passou | ele continua normalmente, basta escolher jogar novamente ou olhar o tabuleiro da vitória/empate |
+| T07 Reiniciar o jogo | passou | quando se aperta f5 ele reinicia normal a pagina e ao clicar em reiniciar também no final do jogo|
+| T08 Empate | passou | N/T |
+| T09 Atualizar a página | passou | f5 reinicia do 0 o jogo |
 
 Defeitos encontrados: (descrição, como reproduzir, corrigido?)
 
