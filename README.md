@@ -67,7 +67,7 @@ src/
 | T08 Empate | passou | N/T |
 | T09 Atualizar a página | passou | f5 reinicia do 0 o jogo |
 
-Defeitos encontrados: (descrição, como reproduzir, corrigido?)
+Defeitos encontrados: sem defeitos encontrados nos testes!
 
 ## Capturas de tela
 (adicione prints em `docs/` e referencie aqui)
