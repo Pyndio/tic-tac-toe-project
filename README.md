@@ -2,7 +2,7 @@
 
 ## Descrição
 Jogo da velha (Tic-Tac-Toe) feito em React para a disciplina de Coding (AV2 – Revisão 1).
-Dois jogadores (X e O) alternam jogadas num tabuleiro 3x3; o jogo identifica vitória e empate e pode ser reiniciado.
+Dois jogadores (X e O) alternam jogadas num tabuleiro 3x3. O jogo identifica vitória e empate, ilumina as casas da sequência vencedora, mostra uma tela de vencedor e pode ser reiniciado.
 
 ## Tecnologias
 - React 18
@@ -31,13 +31,15 @@ O jogo abre em http://localhost:3000. Testes automatizados: `npm test`.
 
 ## Estrutura do projeto
 ```
+docs/                 (capturas de tela)
 src/
 ├── App.js / App.css
 ├── index.js / index.css
 ├── components/
-│   ├── Square/   (casa individual)
-│   ├── Board/    (tabuleiro 3x3)
-│   └── Game/     (estado, status, reiniciar)
+│   ├── Square/        (casa individual)
+│   ├── Board/         (tabuleiro 3x3)
+│   ├── Game/          (estado, status, reiniciar)
+│   └── WinnerModal/   (tela de vencedor e de empate)
 └── utils/
     └── calculateWinner.js
 ```
@@ -50,24 +52,38 @@ src/
 
 ## Processo Git
 - `main`: versão estável.
-- Cada desenvolvedor trabalha em branch própria (ex.: `feature-square-board`, `feature-game-logic`).
+- Cada integrante trabalha em branch própria (ex.: `scrum-master`, `dev1`).
 - Commits pequenos com mensagens descritivas.
 - Integração à `main` via Pull Request, revisado por outro integrante.
 
 ## Testes
 | Teste | Resultado | Observações |
 |-------|-----------|-------------|
-| T01 Abrir o jogo | passou | flui normalmente |
-| T02 Realizar uma jogada | passou | tudo ok ele corresponde ao x e a o normalmente |
-| T03 Jogadas alternadas | passou | funciona bem |
-| T04 Posição ocupada | passou | ele não entra na mesma casa que a outra  |
-| T05 Sequência vencedora | passou | quando ganha aparece o ganhador e da pra ver o tabuleiro ou reiniciar o jogo |
-| T06 Continuar após vitória | passou | ele continua normalmente, basta escolher jogar novamente ou olhar o tabuleiro da vitória/empate |
-| T07 Reiniciar o jogo | passou | quando se aperta f5 ele reinicia normal a pagina e ao clicar em reiniciar também no final do jogo|
-| T08 Empate | passou | N/T |
-| T09 Atualizar a página | passou | f5 reinicia do 0 o jogo |
+| T01 Abrir o jogo | Passou | O jogo abre normalmente, com o tabuleiro vazio e o próximo jogador (X) indicado. |
+| T02 Realizar uma jogada | Passou | A jogada aparece corretamente como X ou O. |
+| T03 Jogadas alternadas | Passou | As jogadas alternam entre X e O corretamente. |
+| T04 Posição ocupada | Passou | Uma casa já ocupada não pode ser sobrescrita. |
+| T05 Sequência vencedora | Passou | Ao vencer, aparece o ganhador e é possível ver o tabuleiro ou reiniciar o jogo. |
+| T06 Continuar após vitória | Passou | Após a vitória, é possível apenas escolher **Jogar novamente** ou **Ver tabuleiro** para olhar o resultado. |
+| T07 Reiniciar o jogo | Passou | Os botões **Reiniciar jogo** e **Jogar novamente** limpam o tabuleiro e voltam ao início. |
+| T08 Empate | Passou | Ao preencher as 9 casas sem vencedor, aparece "Empate!". |
+| T09 Atualizar a página | Passou | Ao atualizar a página (F5), o jogo reinicia do zero. |
 
-Defeitos encontrados: sem defeitos encontrados nos testes!
+Defeitos encontrados: nenhum defeito foi encontrado nos testes realizados.
 
 ## Capturas de tela
-(adicione prints em `docs/` e referencie aqui)
+
+### Tabuleiro inicial
+![Tabuleiro inicial](docs/tabuleiro-inicial.png)
+
+### Tela de vencedor
+![Tela de vencedor](docs/vencedor.png)
+
+### Casas vencedoras iluminadas
+![Casas vencedoras iluminadas](docs/vencedor-pos-tabuleiro.png)
+
+### Empate
+![Tela de empate](docs/empate.png)
+
+### Versão no celular
+![Tela de vencedor no celular](docs/vencedor-no-celular.png)
